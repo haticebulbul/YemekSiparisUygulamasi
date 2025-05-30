@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Geri Butonu -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_circle"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Geri"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/black"
+            android:layout_margin="8dp" />
+
+        <!-- Ürün görseli -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardImage"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="8dp"
+            app:layout_constraintTop_toBottomOf="@id/btnBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:id="@+id/imgDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="Product image"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Ürün adı -->
+        <TextView
+            android:id="@+id/tvDetailName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Scoops Ice Cream"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/cardImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Fiyat + Counter Yanyana -->
+        <LinearLayout
+            android:id="@+id/layoutPriceCounter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tvDetailName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="8dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tvDetailPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="$12.00"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:gravity="start" />
+
+            <LinearLayout
+                android:id="@+id/layoutCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_counter"
+                android:padding="8dp"
+                android:elevation="4dp"
+                android:layout_marginStart="8dp">
+
+                <ImageButton
+                    android:id="@+id/btnDecrease"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_circle"
+                    android:src="@drawable/ic_remove"
+                    android:contentDescription="Azalt"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvQuantity"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="16sp" />
+
+                <ImageButton
+                    android:id="@+id/btnIncrease"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_circle"
+                    android:src="@drawable/ic_ad"
+                    android:contentDescription="Artır"
+                    app:tint="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Sepete Ekle Butonu -->
+        <Button
+            android:id="@+id/btnAddToCart"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@id/layoutPriceCounter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/black"
+            android:text="Sepete Ekle"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:drawableEnd="@drawable/ic_add"
+            android:drawablePadding="8dp"
+            android:contentDescription="Sepete Ekle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
